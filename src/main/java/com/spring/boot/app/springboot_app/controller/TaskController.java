@@ -22,9 +22,6 @@ public class TaskController {
     @CrossOrigin(origins = "http://127.0.0.1:5501")
     @PostMapping
     public ResponseEntity<Task> saveTask(@RequestBody Task task){
-        System.out.println(task.getNombre());
-        System.out.println(task.getDescription());  
-        System.out.println(task.isCompletado());
         taskRepository.save(task);
         return ResponseEntity.ok(task);
     }
