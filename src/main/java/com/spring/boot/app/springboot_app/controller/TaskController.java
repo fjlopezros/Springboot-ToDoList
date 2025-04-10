@@ -19,9 +19,14 @@ public class TaskController {
         return taskRepository.findAll();
     }
 
+    @CrossOrigin(origins = "http://127.0.0.1:5501")
     @PostMapping
-    public Task saveTask(@RequestBody Task task){
-        return taskRepository.save(task);
+    public ResponseEntity<Task> saveTask(@RequestBody Task task){
+        System.out.println(task.getNombre());
+        System.out.println(task.getDescription());  
+        System.out.println(task.isCompletado());
+        taskRepository.save(task);
+        return ResponseEntity.ok(task);
     }
 
     @GetMapping("/{id}")
@@ -31,6 +36,7 @@ public class TaskController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
+     
     @PutMapping("/{id}")
     public ResponseEntity<Task> updateTask(@PathVariable Long id,
                                            @RequestBody Task updateTask){
