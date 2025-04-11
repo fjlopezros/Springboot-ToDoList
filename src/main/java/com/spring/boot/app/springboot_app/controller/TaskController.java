@@ -8,6 +8,7 @@ import com.spring.boot.app.springboot_app.repository.TaskRepository;
 
 import java.util.List;
 
+@CrossOrigin(origins = "http://127.0.0.1:5501")
 @RestController
 @RequestMapping("/api/tareas")
 public class TaskController {
@@ -19,7 +20,6 @@ public class TaskController {
         return taskRepository.findAll();
     }
 
-    @CrossOrigin(origins = "http://127.0.0.1:5501")
     @PostMapping
     public ResponseEntity<Task> saveTask(@RequestBody Task task){
         taskRepository.save(task);
