@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <title>Lista de Tareas</title>
+  <link rel="stylesheet" href="tabla.css" />
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+
+  <div class="formbold-main-wrapper" style="flex-direction: column; align-items: stretch; gap: 60px;">
+
+    <div style="overflow-x: auto;">
+      <table id="tabla">
+        <thead>
+          <tr>
+            <th colspan="6" style="font-size: 1.5em; text-align: center;">Tareas</th>
+          </tr>
+          <tr>
+            <th>#</th>
+            <th>Título</th>
+            <th>Descripción</th>
+            <th>Completado</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div id="formulario" class="formbold-form-wrapper">
+      <h1>Modificación de Tareas</h1>
+      <form>
+        <div class="formbold-input-flex">
+          <div>
+            <input
+              type="text"
+              name="titulo"
+              id="titulo"
+              placeholder="titulo"
+              class="formbold-form-input"
+            />
+            <label for="titulo" class="formbold-form-label">Título</label>
+          </div>
+          <div>
+            <input
+              type="text"
+              name="descripcion"
+              id="description"
+              placeholder="descripcion"
+              class="formbold-form-input"
+            />
+            <label for="descripcion" class="formbold-form-label">Descripcion</label>
+          </div>
+        </div>
+
+        <div class="formbold-input-flex">
+          <div>
+            <input
+              type="checkbox"
+              name="completado"
+              id="completado"
+              class="formbold-form-input"
+            />
+            <label for="completado" class="formbold-form-label">Completado</label>
+          </div>
+        </div>
+
+        <button type="submit" class="formbold-btn" id="btnModificar">
+          Modificar Tarea
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="tabla.js"></script>
+</body>
+</html>
+
